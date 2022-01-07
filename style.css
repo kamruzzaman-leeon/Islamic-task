@@ -1,0 +1,201 @@
+/* default value set */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* navbar font,height & backgroud set */
+.navbar {
+  font-size: 14px;
+  height: min-content;
+  background-color: white;
+}
+
+/* navbar logo size set also inheritance */
+.navbar .navlogo {
+  width: 150px;
+  height: 45px;
+}
+.navbar .nav-link {
+  margin-right: 10px;
+  margin-left: 10px;
+  color: white;
+}
+.navbar a {
+  color: rgb(255, 255, 255);
+}
+
+.navbar .nav-item:hover .nav-link {
+  border-top: 3px solid white;
+  border-bottom: 3px solid white;
+  font-size: 18px;
+  color: rgb(255, 255, 255);
+}
+
+.page-footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+}
+/* Remove border from toggler */
+.navbar-toggler {
+  border: 0 !important;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border: 0 !important;
+}
+
+/* Lines of the Toggler */
+.toggler-icon {
+  width: 30px;
+  height: 3px;
+  background-color: #e74c3c;
+  display: block;
+  transition: all 0.2s;
+}
+
+/* Adds Space between the lines */
+.middle-bar {
+  margin: 5px auto;
+}
+
+/* State when navbar is opened (START) */
+.navbar-toggler .top-bar {
+  transform: rotate(45deg);
+  transform-origin: 10% 10%;
+}
+
+.navbar-toggler .middle-bar {
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+
+.navbar-toggler .bottom-bar {
+  transform: rotate(-45deg);
+  transform-origin: 10% 90%;
+}
+/* State when navbar is opened (END) */
+
+/* State when navbar is collapsed (START) */
+.navbar-toggler.collapsed .top-bar {
+  transform: rotate(0);
+}
+
+.navbar-toggler.collapsed .middle-bar {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+.navbar-toggler.collapsed .bottom-bar {
+  transform: rotate(0);
+}
+/* State when navbar is collapsed (END) */
+
+/* Color of Toggler when collapsed */
+.navbar-toggler.collapsed .toggler-icon {
+  background-color: white;
+}
+
+.dropdown-divider {
+  color: white;
+}
+
+.info-box {
+  display: block;
+  min-height: 90px;
+  background: rgb(255, 255, 255);
+  width: 100%;
+  box-shadow: 0 1px 1px rgb(0 0 0 / 10%);
+  border-radius: 2px;
+  margin-bottom: 15px;
+}
+
+.input-group {
+  float: none;
+  padding-right: 0;
+  padding-left: 0;
+}
+#custom-search-input {
+  padding: 3px;
+  border: solid 1px #e4e4e4;
+  border-radius: 6px;
+  background-color: #fff;
+}
+.no-border {
+  border: 0 !important;
+}
+.input-group {
+  position: relative;
+  display: table;
+  border-collapse: separate;
+}
+.form-control {
+  border-radius: 0;
+  box-shadow: none;
+  border-color: #d2d6de;
+}
+.input-group .form-control,
+.input-group-btn {
+  display: table-cell;
+}
+
+.info-box-number {
+  display: block;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.info-box-content {
+  padding: 5px 10px;
+  margin-left: 90px;
+}
+.info-box-icon {
+  border-top-left-radius: 2px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 2px;
+  display: block;
+  float: left;
+  height: 90px;
+  width: 90px;
+  text-align: center;
+  font-size: 45px;
+  line-height: 90px;
+  background: rgba(0, 0, 0, 0.2);
+}
+.info-box-left {
+  background-color: rgb(108, 236, 225);
+}
+.info-box-right {
+  background-color: rgb(95, 171, 243);
+}
+
+.bn {
+  font-family: "solaimanlipi";
+}
+
+
+
+.ar {
+  font-size: 35px;
+  font-family: 'Droid Arabic Kufi', 'serif';
+  direction: rtl;
+  
+}
+
+.pd20 {
+  padding: 20px;
+}
+
+
+

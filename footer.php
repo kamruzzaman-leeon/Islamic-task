@@ -12,7 +12,7 @@
         <footer class="page-footer fixed font-small pt-2 bg-dark">
             <!-- Copyright -->
             <!-- <hr class="my-1"> -->
-            <div class="footer-copyright text-center py-2 bg-dark"><span class="colorchange"> © সর্বস্বত্ব স্বত্বাধিকার
+            <div class="footer-copyright text-center py-2 bg-dark"><span> © সর্বস্বত্ব স্বত্বাধিকার
                     সংরক্ষিত | কামরুজ্জামান লীওন ২০২২ </span></div>
             <!-- Copyright -->
             </div>

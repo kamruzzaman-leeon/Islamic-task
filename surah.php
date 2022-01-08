@@ -6,12 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php include 'header.php' ?>
-
+    <button onclick="topFunction()" id="myBtn" title="Go to top" class=" btn btn-outline-danger"><span class="colorchange"><i class="fas fa-angle-double-up"></i></span></button>
     <title>islamic-task | Al-Quran</title>
 </head>
 
 <body>
     <div>
+        <br>
+        <div class="container shadow-lg p-3  mb-2 bg-white rounded">
+            <div class=" topic-heading">সূরা-সমূহ</div>
+            <hr class="bold">
+        </div>
+        
         <!-- surah select & search part start -->
         <div class="container shadow-lg p-3 mb-2 bg-white rounded">
 
@@ -20,8 +26,7 @@
                 <div class="row">
                     <div class="col-md-6 p-2">
                         <div id="custom-search-input">
-                            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post"
-                                class="input-group col-md-12">
+                            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="input-group col-md-12">
                                 <select class="form-select form-control no-border bn" name="surahno">
                                     <option value="999">সূরা নির্বাচন করুন...</option>
                                     <option value="1">1. আল ফাতিহা</option>
@@ -152,8 +157,7 @@
                     <div class="col-md-6 p-2">
                         <div id="custom-search-input">
                             <form method="" action="#" class="input-group col-md-12">
-                                <input type="text" name="search" class="form-control no-border input-lg"
-                                    placeholder="Search">
+                                <input type="text" name="search" class="form-control no-border input-lg" placeholder="Search">
                                 <span class="input-group-btn">
                                     <button class="btn btn-lg" type="submit">
                                         <i class="fas fa-search"></i>
@@ -195,85 +199,93 @@
                 $su_decoded = json_decode($su, true);
 
                 $num = (int)$surahno - 1;
-
-                echo '<div class="container shadow-lg p-2 mb-2 bg-white rounded">
-                <section class="content">
+        ?>
+                <div class="container shadow-lg p-2 mb-2 bg-white rounded">
+                    <section class="content">
                         <!--info row start-->
-                    <div class="row">
-                           
-                        <div class="col-md-6 col-sm-6 col-xs-12">        
-                                
-                            <div class="info-box info-box-left">
-                                    
-                                <span class="info-box-icon">' . $surahno . '</span> 
-                                <div class="info-box-content">
-                                    <span class="info-box-number " style="font-size:1.7em;">' . $su_decoded[$num]['sura_name'] . '</span>
-                                    <span class="info-box-number">' . $su_decoded[$num]['eng_name'] . '</span>            
+                        <div class="row">
+
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+
+                                <div class="info-box info-box-left">
+
+                                    <span class="info-box-icon"><?php echo  $surahno; ?> </span>
+                                    <div class="info-box-content">
+                                        <span class="info-box-number " style="font-size:1.7em;"><?php echo $su_decoded[$num]['sura_name']; ?></span>
+                                        <span class="info-box-number"><?php echo  $su_decoded[$num]['eng_name']; ?></span>
+                                    </div>
+
                                 </div>
-                                        
+
                             </div>
-                                  
-                        </div>                                
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <div class="info-box info-box-right ">
-                                <span class="info-box-icon"><i class="fa fa-info-circle"></i></span>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="info-box info-box-right ">
+                                    <span class="info-box-icon"><i class="fa fa-info-circle"></i></span>
                                     <div class="info-box-content">
                                         <span class="progress-description">Meaning: The Opening</span></br>
-                                        <span class="progress-description">Total Ayats: <b>' . $su_decoded[$num]['total_ayat'] . '</b></span><br> 
-                                        <span class="progress-description">Para: <b>' . $su_decoded[$num]['para'] . '</b></span>
+                                        <span class="progress-description">Total Ayats:
+                                            <b><?php echo  $su_decoded[$num]['total_ayat']; ?></b></span><br>
+                                        <span class="progress-description">Para:
+                                            <b><?php echo  $su_decoded[$num]['para']; ?></b></span>
                                     </div>
-                                        
-                            </div>            
-                        </div> 
-                    </div>
-                                
-                    
-                    <!--info row end-->
-                    
-                           
-                                         <!--*************************ayat****************************--!>
-                    <div class="box box-primary">
-                        <div class="box-body no-padding">
-                            <table class="table table-striped table-hover">
-                                <tbody>
-                                    <tr><th>#</th><th colspan="4">Ayat</th></tr>';
-                $ch = curl_init();
-                $url = "http://api.alquran.cloud/v1/surah/{$surahno}/editions/quran-simple,bn.bengali,en.yusufali";
+
+                                </div>
+                            </div>
+                        </div>
 
 
-                curl_setopt($ch, CURLOPT_URL, $url);
-                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-                $resp = curl_exec($ch);
-                if ($e = curl_error($ch)) {
-                    echo $e;
-                } else {
-                    $surah = json_decode($resp, true);
+                        <!-- info row end -->
 
-                    for ($i = 0; $i < count($surah['data']['0']['ayahs']); $i++) {
-                        $ar_ayah = $surah['data']['0']['ayahs'][$i];
-                        echo '<tr><td>' . $i + 1 . '.</td><td colspan="4" class =" pd20 ar "><b>' . $ar_ayah['text'] . '</b></td></tr>';
-                        $en_ayah = $surah['data']['1']['ayahs'][$i];
-                        echo '<tr><td>' . ' ' . '</td><td class="pd20 bn">' . $en_ayah['text'] . '</td>';
-                        $bn_ayah = $surah['data']['2']['ayahs'][$i];
-                        echo '<td>' . ' ' . '</td><td class="pd20" >' . $bn_ayah['text'] . '</td></tr>';
-                    }
-                }
 
-                echo '</tbody>
+                        <!--*************************ayat**************************** -->
+                        <div class="box box-primary">
+                            <div class="box-body no-padding">
+                                <table class="table table-striped table-hover">
+                                    <tbody>
+                                        <tr>
+                                            <th>#</th>
+                                            <th colspan="4">Ayat</th>
+                                        </tr>
+                                <?php
+                                $ch = curl_init();
+                                $url = "http://api.alquran.cloud/v1/surah/{$surahno}/editions/quran-simple,bn.bengali,en.yusufali";
+
+
+                                curl_setopt($ch, CURLOPT_URL, $url);
+                                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                                $resp = curl_exec($ch);
+                                if ($e = curl_error($ch)) {
+                                    echo $e;
+                                } else {
+                                    $surah = json_decode($resp, true);
+                                }
+                                curl_exec($ch);
+
+                                for ($i = 0; $i < count($surah['data']['0']['ayahs']); $i++) {
+                                    $ar_ayah = $surah['data']['0']['ayahs'][$i];
+                                    echo '<tr><td>' . $i + 1 . '.</td><td colspan="4" class =" pd20 ar "><b>' . $ar_ayah['text'] . '</b></td></tr>';
+                                    $en_ayah = $surah['data']['1']['ayahs'][$i];
+                                    echo '<tr><td>' . ' ' . '</td><td class="pd20 bn">' . $en_ayah['text'] . '</td>';
+                                    $bn_ayah = $surah['data']['2']['ayahs'][$i];
+                                    echo '<td>' . ' ' . '</td><td class="pd20" >' . $bn_ayah['text'] . '</td></tr>';
+                                }
+
+
+                                echo '</tbody>
                             </table>
                         </div>
                     </div>    
                 </section>
                 
-                </div';
-            }
-        };
-        ?>
+                </div>';
+                            }
+                        };
+                                ?>
 
 
-    </div>
+                            </div>
 
-    <?php include 'footer.php'; ?>
+                            <?php include 'footer.php'; ?>
 </body>
 
 </html>

@@ -2,7 +2,7 @@
 $ch = curl_init();
 $surahno=1;
                 
-                $url = "http://api.alquran.cloud/v1/search/";
+                $url = "https://alquranbd.com/api/hadith/muslim";
                 curl_setopt($ch,CURLOPT_URL,$url);
                 curl_setopt($ch, CURLOPT_RETURNTRANSFER,true );
 

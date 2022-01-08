@@ -6,7 +6,7 @@
   box-sizing: border-box;
 }
 
-/* navbar font,height & backgroud set */
+/* navbar font,height & background set */
 .navbar {
   font-size: 14px;
   height: min-content;
@@ -179,9 +179,9 @@
 .info-box-right {
   background-color: rgb(95, 171, 243);
 }
-
+@import url('https://fonts.maateen.me/solaiman-lipi/font.css');
 .bn {
-  font-family: "solaimanlipi";
+  font-family: 'SolaimanLipi', sans-serif;
 }
 
 
@@ -197,5 +197,52 @@
   padding: 20px;
 }
 
+.topic-heading{
+  font-size: 40px;
+  font-weight: bolder;
+  text-align: center;
+}
 
+.backward{
+  position: fixed;
+  bottom: 50px;
+  left: 50px;
+  
+}
+.forward{
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  
+}
+.colorchange
+{
+animation: colorchange .8s infinite;
+}
+@keyframes colorchange{
+0%{color: red}
+25%{color:#bf55ec;}
+50%{color: white;}
+100%{color: orange;}
+}
 
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 150px;
+  right: 50px;
+  z-index: 99;
+  font-size: 24px;
+  border: none;
+  outline: none;
+  background-color:rgba(248, 248, 248, 0) ;
+  color: rgb(255, 0, 0);
+  cursor: pointer;
+  padding: 3px;
+  border-radius:5px;
+  }
+  #myBtn:hover {
+  background-color: #fa2500ea;
+  color:#fff;
+  }
+  

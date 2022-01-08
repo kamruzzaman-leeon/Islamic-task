@@ -25,7 +25,7 @@
                         <a class="nav-link" href="surah.php">সূরা-সমূহ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">হাদিস </a>
+                        <a class="nav-link" href="hadith.php">হাদিস </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">রমাদান ট্রাকার </a>

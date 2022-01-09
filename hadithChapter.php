@@ -16,7 +16,7 @@
             <hr class="bold">
         </div>
          <div class="container shadow-lg p-3  mb-2 bg-white rounded">
-            <div class="container shadow-lg p-3  mb-2 bg-white rounded fw-bolder text-center">হাদিস অধ্যায় সমূহের তালিকা
+            <div class="container shadow-lg p-3  mb-2 bg-success text-white rounded fw-bolder text-center">হাদিস অধ্যায় সমূহের তালিকা
                 (List of hadith chapters)
             </div>
             <?php 
@@ -45,7 +45,7 @@
                 <div class="box-body no-padding">
                     <table class="table table-striped table-hover">
                         <tbody>
-                        <tr>
+                        <tr class=" bg-warning ">
                             <th colspan="2"class="text-center">অধ্যায়ের নাম</th>
                             <th>শুরু-শেষ</span></th>
                             <th>হাদিস সংখ্যা</th>
@@ -60,7 +60,7 @@
                             <td><?php echo $chapter['nameEnglish']; ?></td>
                             <td><?php echo $chapter['range_start'] .'-' . $chapter['range_end']; ?></td>
                             <td><?php echo $chapter['hadith_number']; ?></td>
-                            <td><a href="hadithPage.php?hadithBookKey=<?php echo $getBookKey;?>&hadithChapter=<?php echo $chapter['chSerial']?>&ChapterName=<?php echo $chapter['nameBengali']?>"  class="btn btn-outline-dark bn">দেখতে চাই</a></td>
+                            <td><a href="hadithPage.php?hadithBookKey=<?php echo $getBookKey;?>&hadithChapter=<?php echo $chapter['chSerial']?>&ChapterName=<?php echo $chapter['nameBengali']?>"  class="btn btn-primary bn">দেখতে চাই</a></td>
                         </tr>
                         <?php endfor ?>
                         </tbody>

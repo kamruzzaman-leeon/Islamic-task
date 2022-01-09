@@ -28,20 +28,33 @@
                         <a class="nav-link" href="hadith.php">হাদিস </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">রমাদান ট্রাকার </a>
+                        <a class="nav-link" href="#">ট্রাকার</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">নামাজ-শিক্ষা </a>
+                        <a class="nav-link" href="#">নামাজ-শিক্ষা</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">কালিমা-ঈমান </a>
+                        <a class="nav-link" href="#">কালিমা</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">দোয়া</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">অন্যান্য </a>
+                
+                
+                    <?php if(!isset($_SESSION)):?>
+                    
+                    <li class=" nav-item mx-2  mb-2" >
+                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#loginmodal">লগইন</button>
+                    <?php include 'loginmodel.php'?>
                     </li>
+                    <li class=" nav-item mx-2  mb-2">
+                    <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#regmodal">রেজিস্ট্রেশন</button>
+                    <?php include 'regmodal.php' ?>
+                    </li>
+                    <?php endif?>
+
+                    </li>
+                    <?php if(isset($_SESSION)): ?>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
@@ -56,6 +69,7 @@
                             <li><a class="dropdown-item" href="#">লগ-আউট</a></li>
                         </ul>
                     </li>
+                    <?php endif?>
 
                 </ul>
             </div>

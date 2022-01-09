@@ -19,7 +19,7 @@
         </div>
         <!-- surah select & search part start -->
         <div class="container shadow-lg p-3  mb-2 bg-white rounded">
-            <div class="container shadow-lg p-3  mb-2 bg-white rounded fw-bolder text-center">হাদিস গ্রন্থসমূহের তালিকা
+            <div class="container shadow-lg p-3  mb-2 bg-success text-white rounded fw-bolder text-center">হাদিস গ্রন্থসমূহের তালিকা
                 (List of hadith books)</div>
             <?php 
                 $ch = curl_init();

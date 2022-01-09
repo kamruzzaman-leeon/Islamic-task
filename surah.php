@@ -14,7 +14,7 @@
     <div>
         <br>
         <div class="container shadow-lg p-3  mb-2 bg-white rounded">
-            <div class=" topic-heading">সূরা-সমূহ</div>
+            <div class=" topic-heading bn">সূরা-সমূহ</div>
             <hr class="bold">
         </div>
         
@@ -209,9 +209,9 @@
 
                                 <div class="info-box info-box-left">
 
-                                    <span class="info-box-icon"><?php echo  $surahno; ?> </span>
+                                    <span class="info-box-icon fw-bold"><?php echo  $surahno; ?> </span>
                                     <div class="info-box-content">
-                                        <span class="info-box-number " style="font-size:1.7em;"><?php echo $su_decoded[$num]['sura_name']; ?></span>
+                                        <span class="info-box-number h3 fw-bolder"><?php echo $su_decoded[$num]['sura_name']; ?></span>
                                         <span class="info-box-number"><?php echo  $su_decoded[$num]['eng_name']; ?></span>
                                     </div>
 
@@ -221,8 +221,8 @@
                             <div class="col-md-6 col-sm-6 col-xs-12">
                                 <div class="info-box info-box-right ">
                                     <span class="info-box-icon"><i class="fa fa-info-circle"></i></span>
-                                    <div class="info-box-content">
-                                        <span class="progress-description">Meaning: The Opening</span></br>
+                                    <div class="info-box-content h5">
+                                        
                                         <span class="progress-description">Total Ayats:
                                             <b><?php echo  $su_decoded[$num]['total_ayat']; ?></b></span><br>
                                         <span class="progress-description">Para:
@@ -242,7 +242,7 @@
                             <div class="box-body no-padding">
                                 <table class="table table-striped table-hover">
                                     <tbody>
-                                        <tr>
+                                        <tr class="bg-warning text-white ">
                                             <th>#</th>
                                             <th colspan="4">Ayat</th>
                                         </tr>

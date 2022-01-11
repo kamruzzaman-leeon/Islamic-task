@@ -12,8 +12,8 @@
                 <?php 
                     $i=1;
                     $sql ="SELECT `fname`, `username`, `email`, `usertype`, `createdate` FROM `user`";
-                    if($result =mysqli_query($conn,$sql)):
-                        if(mysqli_num_rows($result) > 0):        
+                    if($result = $conn->query($sql)):
+                        if($result->num_rows > 0):        
                 ?>
                 <div class="box box-primary">
                     <div class="box-body no-padding">
@@ -27,7 +27,7 @@
                                 <th class = "text-white">User type</th>
                                 <th class = "text-white">Create date</th>
                             </tr>
-                            <?php while($row=mysqli_fetch_array($result)):?>
+                            <?php while($row=$result->fetch_assoc()):?>
                             <tr>
                                 <td><?php echo $i++;?></td>
                                 <td><?php echo $row['fname'];?></td>
@@ -40,14 +40,18 @@
                         </table>
                     </div>
                 </div>
-                <?php endif; endif;?>
+                <?php endif; endif;$conn->close();?>
 
             </div>
         </div>
     </div>
 </center>
 
-<?php
-else:
-    header("HTTP/1.0 404 Not Found");   
-endif?>
+<?php else:
+            echo"<script>
+            alert('Admin Section!Please login as a Admin or check another page.Thank you.');
+            window.location.href='index.php';
+            </script>"; 
+            
+
+        endif?>

@@ -3,11 +3,13 @@
    define('USERNAME', 'root');
    define('PASSWORD', '');
    define('DATABASE', 'islamic');
-   $conn = mysqli_connect(SERVER,USERNAME,PASSWORD,DATABASE);
-//    if(!$conn){
-//     die("error to connect.please check the db connection info ". mysqli_connect_error());
-    
-// }
-// else{
+
+// Create connection MySQLi Object-oriented
+$conn = new mysqli(SERVER,USERNAME,PASSWORD,DATABASE);
+// if ($conn->connect_error) {
+//    die("Connection failed: " . $conn->connect_error);
+//  }
+//  else{
 //     echo "successfully database connected!";
-// }
+//  }
+ ?>

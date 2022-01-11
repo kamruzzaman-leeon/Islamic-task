@@ -10,11 +10,11 @@
     <?php include 'header.php'; ?>
     
 </head>
-
+<?php if(empty($_SESSION)):?>
 <body>
     <?php
         // include 'session.php';
-
+        
         $invalid="";
         if($_SERVER["REQUEST_METHOD"]=="POST"){
             $sessionuser=mysqli_real_escape_string($conn,$_POST['logininfo']);
@@ -26,10 +26,10 @@
             }
             
             $sql="SELECT * FROM user where `username` = '$sessionuser' OR `email` ='$sessionuser'";
-            $result=mysqli_query($conn,$sql);
+            $result=$conn->query($sql);
             if($result){
-                if(mysqli_num_rows($result)>0){
-                    $result_fetch=mysqli_fetch_assoc($result);
+                if($result->num_rows>0){
+                    $result_fetch=$result->fetch_assoc();
                     if(password_verify($sessionpassword,$result_fetch['password'])){
                         if($result_fetch['usertype']=='admin'){
                             $_SESSION['admin']=true;
@@ -54,6 +54,7 @@
                     $invalid='<div class="text-danger">UserName OR Email not found!</div>';
                 }
             }
+            $conn->close();
         }
         
     ?>
@@ -98,7 +99,14 @@
     </div>
 </body>
 
-<?php include 'footer.php'; ?>
+<?php include 'footer.php';
+ else:
+    echo"<script>
+    alert('you are already login!');
+    window.location.href='index.php';
+    </script>";
+ endif;
+  ?> 
 
 </html>
 <script>

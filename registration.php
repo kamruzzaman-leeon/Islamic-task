@@ -14,7 +14,7 @@
 
     
     $error = array();
-    $fnameErr = $usernameErr = $emailErr = $passwordErr = $confirmpasswordErr =$usertypeErr= "";
+    $fnameErr = $usernameErr = $emailErr = $passwordErr = $confirmpasswordErr = $usertypeErr= "";
     $fname = $username = $email = $password = $confirmpassword = $usertype = "";
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -86,26 +86,27 @@
             $usertype = test_input($_POST['usertype']);
         } else{
             $usertypeErr="<div class='text-danger'>please select the correct user type</div>";
+            
         }
 
 
         // database insert
         if (count($error) === 0) {
 
-            require('db.php');
+            include_once('db.php');
 
-            if (!$conn) {
-                die("ERROR: Could not connect. " . mysqli_connect_error());
+            if ($conn->connect_error) {
+                die("ERROR: Could not connect. " . $conn->connect_error);
             }
 
             $createdate=date("Y-m-d H:i:s");
 
             $exist_user ="SELECT * FROM user where `username`= '$username' OR `email` = '$email'";
-            $exist = mysqli_query($conn,$exist_user);
+            $exist = $conn->query($exist_user);
             if($exist)
             {
-                if(mysqli_num_rows($exist)>0){
-                    $result_fetch=mysqli_fetch_assoc($exist);
+                if($exist->num_rows > 0){
+                    $result_fetch=$exist->fetch_assoc();
                     if($result_fetch['username']==$username){
                         echo"
                         <script>
@@ -127,7 +128,7 @@
 
                     $sql = "INSERT INTO `user` (`fname`, `username`, `email`,`password`, `usertype`,`createdate`) VALUES ('$fname','$username','$email','$password','$usertype','$createdate')";
 
-                    if (mysqli_query($conn, $sql)) {
+                    if ($conn->query($sql)===TRUE) {
 
                         echo 
                         "<script>
@@ -137,10 +138,10 @@
 
                     } 
                     else {
-                        echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
+                        echo "ERROR: Could not able to execute " . $conn->error;
                     }
                 }
-                mysqli_close($conn);
+               $conn->close();
             }                   
         }
 
@@ -225,6 +226,7 @@
                                     </select>
                                     <small id="utHelp" class="form-text text-muted"> Select the user type
                                         Admin/Client</small>
+                                        <?php echo $usertypeErr;?>
                                 </div>
                             </div>
                     </div>

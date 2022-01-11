@@ -50,7 +50,7 @@
                             <?php if(isset($_SESSION['useradmin'])) echo $_SESSION['useradmin']; ?>
                         </a>
                         <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">প্রোফাইল</a></li>
+                            <li><a class="dropdown-item" href="profile.php">প্রোফাইল</a></li>
                             <li><a class="dropdown-item" href="#">কার্যকলাপ</a></li>
                             <li>
                                 <hr class="dropdown-divider">
@@ -65,7 +65,7 @@
                             <?php if(isset($_SESSION['userclient'])) echo $_SESSION['userclient']; ?>
                         </a>
                         <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">প্রোফাইল</a></li>
+                            <li><a class="dropdown-item" href="profile.php">প্রোফাইল</a></li>
                             <li><a class="dropdown-item" href="#">কার্যকলাপ</a></li>
                             <li>
                                 <hr class="dropdown-divider">

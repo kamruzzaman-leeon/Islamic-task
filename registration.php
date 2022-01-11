@@ -98,6 +98,8 @@
                 die("ERROR: Could not connect. " . mysqli_connect_error());
             }
 
+            $createdate=date("Y-m-d H:i:s");
+
             $exist_user ="SELECT * FROM user where `username`= '$username' OR `email` = '$email'";
             $exist = mysqli_query($conn,$exist_user);
             if($exist)
@@ -123,7 +125,7 @@
                 else{
                     $password=password_hash($password,PASSWORD_DEFAULT);
 
-                    $sql = "INSERT INTO `user` (`fname`, `username`, `email`,`password`, `usertype`) VALUES ('$fname','$username','$email','$password','$usertype')";
+                    $sql = "INSERT INTO `user` (`fname`, `username`, `email`,`password`, `usertype`,`createdate`) VALUES ('$fname','$username','$email','$password','$usertype','$createdate')";
 
                     if (mysqli_query($conn, $sql)) {
 

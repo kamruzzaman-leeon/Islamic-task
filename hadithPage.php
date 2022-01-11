@@ -61,7 +61,7 @@
 
                     <div class="shadow card flex-fill m-2 p-2">
                         <div class="card-body  ">
-                            <h5 class="card-title bn"><?php echo $hadithpage['topicName'];?></h5>
+                            <h5 class="card-title bn justifysentence"><?php echo $hadithpage['topicName'];?></h5>
                             <p class="card-text fw-bold">
                                 <?php echo $hadithpage['rabiNameBn'].' '.$hadithpage['rabiNameEn'] ;?></p>
                             <p class="card-text"> <?php echo" হাদিস নংঃ ".$hadithpage['hadithNo']; ?></p>
@@ -69,11 +69,11 @@
                         <div class="card-footer">
                             <!-- .card-footer -->
                             <button type="button" class="btn btn-info" data-bs-toggle="modal"
-                                data-bs-target="#staticBackdrop">দেখতে চাই</button>
+                                data-bs-target="#staticBackdrop-<?php echo $i;?>">দেখতে চাই</button>
 
 
                             <!-- Modal -->
-                            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static"
+                            <div class="modal fade" id="staticBackdrop-<?php echo $i;?>" data-bs-backdrop="static"
                                 data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
                                 aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-scrollable modal-lg">
@@ -83,6 +83,8 @@
                                                 <p class="bn fw-bold">
                                                     <?php echo $hadithpage['topicName']. ' - '.$hadithpage['rabiNameBn'];?>
                                                 </p>
+                                                <p class="text-muted"> <?php echo" হাদিস নংঃ ".$hadithpage['hadithNo']; ?></p>
+
                                             </h5>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                 aria-label="Close"></button>
@@ -90,9 +92,9 @@
                                         <div class="modal-body">
                                             <p class="ar"><?php echo $hadithpage['hadithArabic'];?></p>
                                             <hr>
-                                            <p class="bn"><?php echo $hadithpage['hadithBengali'];?></p>
+                                            <p class="bn justifysentence"><?php echo $hadithpage['hadithBengali'];?></p>
                                             <hr>
-                                            <p class="bn"><?php echo $hadithpage['hadithEnglish'];?></p>
+                                            <p class="bn justifysentence"><?php echo $hadithpage['hadithEnglish'];?></p>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-danger"

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,7 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $_GET['ChapterName']; ?></title>
-    <?php include 'header.php';?>
+   
+    <!-- header part start-->
+    <?php include 'header.php'?>
+    <!-- header part end -->
     <button onclick="topFunction()" id="myBtn" title="Go to top"><span class="colorchange"><i
                 class="fas fa-angle-double-up"></i></span></button>
 </head>

@@ -5,7 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <?php include 'header.php' ?>
+    
+    <!-- header part start-->
+    <?php include 'header.php';?>
+    <!-- header part end -->
     <button onclick="topFunction()" id="myBtn" title="Go to top"><span class="colorchange"><i class="fas fa-angle-double-up"></i></span></button>
     <title> হাদিস </title>
 </head>

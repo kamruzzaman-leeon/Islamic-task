@@ -9,5 +9,5 @@
     
 // }
 // else{
-//     echo "successfully database connected!<br>";
+//     echo "successfully database connected!";
 // }

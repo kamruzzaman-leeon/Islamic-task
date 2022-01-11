@@ -1,3 +1,4 @@
+<?php include 'session.php';?>
 <html>
 <header>
     <nav class="navbar navbar-expand-lg bg-dark">
@@ -41,24 +42,12 @@
                     </li>
                 
                 
-                    <?php if(!isset($_SESSION)):?>
                     
-                    <li class=" nav-item mx-2  mb-2" >
-                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#loginmodal">লগইন</button>
-                    <?php include 'loginmodel.php'?>
-                    </li>
-                    <li class=" nav-item mx-2  mb-2">
-                    <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#regmodal">রেজিস্ট্রেশন</button>
-                    <?php include 'regmodal.php' ?>
-                    </li>
-                    <?php endif?>
-
-                    </li>
-                    <?php if(isset($_SESSION)): ?>
+                    <?php if(isset($_SESSION['admin']) && $_SESSION['admin']==true): ?>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
-                            User
+                            <?php if(isset($_SESSION['useradmin'])) echo $_SESSION['useradmin']; ?>
                         </a>
                         <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="#">প্রোফাইল</a></li>
@@ -66,10 +55,41 @@
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="#">লগ-আউট</a></li>
+                            <li><a class="dropdown-item" href="logout.php">লগ-আউট</a></li>
                         </ul>
                     </li>
-                    <?php endif?>
+                    <?php elseif(isset($_SESSION['client']) && $_SESSION['client']==true): ?>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <?php if(isset($_SESSION['userclient'])) echo $_SESSION['userclient']; ?>
+                        </a>
+                        <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">প্রোফাইল</a></li>
+                            <li><a class="dropdown-item" href="#">কার্যকলাপ</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="logout.php">লগ-আউট</a></li>
+                        </ul>
+                    </li>
+                    
+                        <?php else:?>
+                    <li class=" nav-item mx-2  mb-2" >
+                    <a href="login.php">
+                    <button type="button" class="btn btn-outline-success"> লগইন</button>
+                    </a>
+                    
+                    </li>
+                    <li class=" nav-item mx-2  mb-2">
+                    <a href="registration.php">
+                    <button type="button" class="btn btn-outline-info">রেজিস্ট্রেশন</button>
+                    </a>
+                    
+                    </li>
+                    <?php endif;?>
+
+                    
 
                 </ul>
             </div>
@@ -77,4 +97,7 @@
     </nav>
 </header>
 
+
+
+   
 </html>

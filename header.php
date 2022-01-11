@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="image\icon\favcon.ico" type="image/x-icon">
     <link rel="stylesheet" href="bootstrap-5.1.3-dist/css/bootstrap.min.css">
      <!-- header part start-->
-     <?php include 'navbar.php'?>
+     <?php include 'navbar.php';?>
     <!-- header part end -->
     <!-- font -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" 

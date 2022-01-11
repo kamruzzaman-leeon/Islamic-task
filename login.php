@@ -80,7 +80,7 @@
                                 </div>
                 
                                 <div class="form-group form-check ">
-                                    <input type="checkbox" class="form-check-input" value="<?php if(isset($_COOKIE['logininfo']) && isset($_COOKIE['loginpassword'])) echo "checked" ;?>" name="rememberme">
+                                    <input type="checkbox" class="form-check-input" value="<?php if(isset($_COOKIE['logininfo']) && isset($_COOKIE['loginpassword'])) echo 'checked' ;?>" name="rememberme">
                                     <label class="form-check-label">Remember Me<span class="text-muted"> [30 days]</span> </label>
                                 </div>
                             </div>

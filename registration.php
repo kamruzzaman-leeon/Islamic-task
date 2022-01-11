@@ -107,7 +107,7 @@
                     if($result_fetch['username']==$username){
                         echo"
                         <script>
-                        alert('$result_fetch[username] - Username already taken');
+                        alert('$result_fetch[username] - Username already taken!');
                         window.location.href='registration.php';
                         </script>";
                     }

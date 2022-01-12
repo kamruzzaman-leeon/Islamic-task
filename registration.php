@@ -36,8 +36,8 @@
             $error[] = $usernameErr;
         } else {
             $username = test_input($_POST['username']);
-            if (!preg_match("/^[a-zA-Z0-9 ]{5,40}$/i", $username)) {
-                $usernameErr = "<div class='text-danger'>Username must be 5-30 digit and alphabetic character long</div>";
+            if (!preg_match("/^[a-zA-Z0-9 ]{3,40}$/i", $username)) {
+                $usernameErr = "<div class='text-danger'>Username must be 3-40 digit and alphabetic character long</div>";
                 $error[] = $usernameErr;
             }
         }
@@ -178,8 +178,8 @@
                                 <div class="form-group py-3">
                                     <input type="text" name="username" class="form-control" placeholder="Username"
                                         aria-describedby="usernameHelp" required>
-                                    <small id="usernameHelp" class="form-text text-muted"> Username must be 5-30
-                                        character long.
+                                    <small id="usernameHelp" class="form-text text-muted"> Username must be 3-40
+                                        character(digit and character) long.
                                     </small>
 
                                     <?php echo $usernameErr; ?>

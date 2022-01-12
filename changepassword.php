@@ -92,8 +92,9 @@
                         $userclient = $_SESSION['userclient'];
                         $sql = "UPDATE `user` SET `password`='$newpassword' WHERE `username`='$userclient' OR `email`='$userclient'";
                     }
+                    $out=$conn->query($sql);
 
-                    if($conn->query($sql)){
+                    if($out){
                         echo"<script>
                         alert('Successfully Password Changed!please login again.');
                         

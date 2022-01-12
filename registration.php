@@ -98,7 +98,7 @@
             if ($conn->connect_error) {
                 die("ERROR: Could not connect. " . $conn->connect_error);
             }
-
+            // date_default_timezone_set('asia/dhaka');
             $createdate=date("Y-m-d H:i:s");
 
             $exist_user ="SELECT * FROM user where `username`= '$username' OR `email` = '$email'";

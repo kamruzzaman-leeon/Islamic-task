@@ -17,6 +17,7 @@
                 ?>
                 <div class="box box-primary">
                     <div class="box-body no-padding">
+                    <div class="table-responsive">
                         <table class="table table-striped table-hover">
 
                             <tr class = "bg-dark text-white">
@@ -38,6 +39,7 @@
                             </tr>
                             <?php endwhile?>
                         </table>
+                    </div>
                     </div>
                 </div>
                 <?php endif; endif;$conn->close();?>

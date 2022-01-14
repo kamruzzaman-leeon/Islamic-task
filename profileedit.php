@@ -26,18 +26,18 @@
             $fnameErr = $usernameErr = $emailErr = "";
             if (isset($_SESSION['admin']) && $_SESSION['admin'] == true) {
                 $useradmin = $_SESSION['useradmin'];
-                $sql = "SELECT `fname` FROM `user` WHERE `username`='$useradmin' OR `email`='$useradmin'";
+                $sql = "SELECT `fname`,`username`,`email` FROM `user` WHERE `username`='$useradmin' OR `email`='$useradmin'";
             } elseif (isset($_SESSION['client']) && $_SESSION['client'] == true) {
                 $userclient = $_SESSION['userclient'];
-                $sql = "SELECT `fname` FROM `user` WHERE `username`='$userclient' OR `email`='$userclient'";
+                $sql = "SELECT `fname`,`username`,`email` FROM `user` WHERE `username`='$userclient' OR `email`='$userclient'";
             }
 
             $result = $conn->query($sql);
 
             $result_fetch = $result->fetch_assoc();
             $fname = $result_fetch['fname'];
-            // $username = $result_fetch['username'];
-            // $email = $result_fetch['email'];
+            $username = $result_fetch['username'];
+            $email = $result_fetch['email'];
 
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -79,7 +79,7 @@
                         $sql = "UPDATE `user` SET `fname`='$fname' WHERE `username`='$userclient' OR `email`='$userclient'";
                     }
                     
-                }
+                
                 $out=$conn->query($sql);
                 if($out){
                     
@@ -91,6 +91,7 @@
                 }
                 $conn->close();
             }
+        }
 
             ?>
             <center>
@@ -123,8 +124,8 @@
                                     <?php echo $fnameErr; ?>
                                 </div>
 
-                                <!-- <div class="form-group py-3">
-                                    <input type="text" name="username" class="form-control" placeholder="Username" aria-describedby="usernameHelp" value="<?php // echo $username; ?>">
+                                <div class="form-group py-3">
+                                    <input type="text" name="username" class="form-control" placeholder="Username" aria-describedby="usernameHelp" value="<?php echo $username; ?>" disable readonly>
                                     <small id="usernameHelp" class="form-text text-muted"> Username must be 5-30
                                         character long.
                                     </small>
@@ -133,13 +134,13 @@
 
                                 </div>
                                 <div class="form-group py-3">
-                                    <input type="email" name="email" class="form-control" placeholder="Email" aria-describedby="emailHelp" value="<?php // echo $email; ?>">
+                                    <input type="email" name="email" class="form-control" placeholder="Email" aria-describedby="emailHelp" value="<?php echo $email; ?>" disabled readonly>
                                     <small id="emailHelp" class="form-text text-muted">Email must be in valid
                                         format.</small>
 
-                                    <?php// echo $emailErr; ?>
+                                    <?php // echo $emailErr; ?>
 
-                                </div> -->
+                                </div>
 
 
                             </div>

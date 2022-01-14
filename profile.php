@@ -91,7 +91,7 @@
                 <div class="card-body shadow ">
                     <form action="optout.php" method="post" class="row g-2 ">
                         <div class="col-auto form-check  ">
-                            <input type="checkbox" class="form-check-input" name="opt-out" id="optout">
+                            <input type="checkbox" class="form-check-input" name="opt-out" id="optout" value="unchecked">
                             <label class="form-check-label">Cookie Opt-out </label>
                         </div>
                         <div class="col-auto">

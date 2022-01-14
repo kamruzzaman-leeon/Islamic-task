@@ -11,4 +11,11 @@ if(!empty($_POST['optout']))
     </script>";
     
 }
+else{
+    echo 
+    "<script>
+    alert('No Cookie!');
+    window.location.href='profile.php';
+    </script>";
+}
 

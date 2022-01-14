@@ -1,6 +1,6 @@
 # islamic-task
 <p>Islam is the Solution and makes life easy. We have to follow the instruction of Allah. Islamic task is a helper that guides a person to complete the task of                        Islam.</p>
-<h3>home page
+<p>home page</p>
 ![home](https://user-images.githubusercontent.com/48612426/149564706-67286bce-a1f0-4982-a2ed-10ba42313f97.png)
 <h3>surah</h3>
 ![114 sura](https://user-images.githubusercontent.com/48612426/149546660-97e069c3-8bc8-4353-a6a1-22eef8662e79.png)

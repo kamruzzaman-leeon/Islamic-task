@@ -1,2 +1,2 @@
 # Islamic-task
-Islam is the Solution. Islam makes life easy. Just we have to follow the instruction that's given by Allah. Islamic task is a helper that helps a person to complete the task of Islam.
+Islam is the Solution and makes life easy. We have to follow the instruction of Allah. Islamic task is a helper that guides a person to complete the task of Islam.

@@ -3,11 +3,11 @@
 <header>
     <nav class="navbar navbar-expand-lg bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="Index.php">
+            <a class="navbar-brand" href="index.php">
                 <img src="image/navlogo.png"
                      alt="navbar-logo"
                      width="150"
-                     height="45" 
+                     height="40" 
                      class="d-inline-block align-text-top">
             </a>
             <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
@@ -20,7 +20,7 @@
             <div class="collapse navbar-collapse " id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item ">
-                        <a class="nav-link" aria-current="page" href="Index.php">হোম</a>
+                        <a class="nav-link" aria-current="page" href="index.php">হোম</a>
                     </li>
                     <li class="nav-item ">
                         <a class="nav-link" href="surah.php">সূরা-সমূহ</a>

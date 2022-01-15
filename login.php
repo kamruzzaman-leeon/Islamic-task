@@ -39,10 +39,18 @@
                     $result_fetch = $result->fetch_assoc();
                     if (password_verify($sessionpassword, $result_fetch['password'])) {
                         if ($result_fetch['usertype'] == 'admin') {
+                            if($result_fetch['isactive'] == '1'){
                             $_SESSION['admin'] = true;
                             $_SESSION['useradmin'] = $sessionuser;
                             header('location:index.php');
                             exit;
+                            }
+                            else{
+                                echo "<script>
+                                    alert('Wait for your account activation!');
+                                    window.location.href='index.php';
+                                    </script>";
+                            }
                         } else {
                             $_SESSION['client'] = true;
                             $_SESSION['userclient'] = $sessionuser;

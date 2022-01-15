@@ -16,7 +16,7 @@
 ![login](https://user-images.githubusercontent.com/48612426/149546491-6c175aa1-2fec-4cf2-a68f-2e87ce171b7d.png)
 ![paschange](https://user-images.githubusercontent.com/48612426/149611089-787c4782-b292-43be-824a-47c65e7f6369.png)
 
-![profile edit](https://user-images.githubusercontent.com/48612426/149611115-e91556fc-08f4-4d73-a2a7-812a9ecda3ec.png)
+![profile update](https://user-images.githubusercontent.com/48612426/149611243-046b57f1-f59d-41b0-a295-806e05f204d5.png)
 
 ![adminpanel](https://user-images.githubusercontent.com/48612426/149546715-124e87ff-f76b-4f3d-b6f4-2dde9898dfd3.png)
 

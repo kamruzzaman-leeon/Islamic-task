@@ -1,5 +1,19 @@
-# islamic-task
-<p>Islam is the Solution and makes life easy. We have to follow the instruction of Allah. Islamic task is a helper that guides a person to complete the task of                        Islam.</p>
+# Islamic Task
+
+The "Islamic Task" project is aimed at facilitating adherence to Islamic practices through the use of modern technology. By employing a combination of HTML, CSS, Bootstrap, JavaScript, PHP, and API integration, it creates a user-friendly platform to assist individuals in fulfilling their religious duties effectively.
+
+## Features
+
+- **Reminders:** Set reminders for daily prayers and other religious obligations.
+- **Access to Teachings:** Browse Islamic teachings, Surahs, and Hadiths.
+- **Profile Management:** Users can register, log in, and manage their profiles.
+- **Admin Panel:** Admins have access to a panel for managing users, content, and application settings.
+- **Responsive Design:** Utilizes Bootstrap for a responsive and mobile-friendly layout.
+
+## Live Demo
+
+You can access the live demo of the project [here](http://islamic-task.infinityfreeapp.com/index.php).
+
 
 ![home](https://user-images.githubusercontent.com/48612426/149565609-65b06cfd-efd1-4815-a3bf-4f6556d90dec.png)
 
